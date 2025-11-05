@@ -17,7 +17,7 @@
 
 ---
 
-## Employee Test Cases
+## Employee Test Cases.
 
 ### TC-EMP-001: Submit T&S Application - Valid Unapproved Type
 **Priority:** High  
