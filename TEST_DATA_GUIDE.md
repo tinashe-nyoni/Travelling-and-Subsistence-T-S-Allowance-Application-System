@@ -6,7 +6,7 @@
 
 ---
 
-## Table of Contents
+## Table of Contents.
 
 1. [Test Environment Setup](#test-environment-setup)
 2. [Test User Accounts](#test-user-accounts)
