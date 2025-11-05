@@ -272,39 +272,39 @@ Use the HTML template to record test execution. The template provides a professi
 
 ### 5.1 Defect Reporting Template
 
-When reporting a defect, include:
+Use the HTML template to report defects. The template provides a structured format for documenting bugs and issues.
 
-```
-Defect ID: [Auto-generated]
-Title: [Brief description]
-Severity: [Critical/High/Medium/Low]
-Priority: [P1/P2/P3/P4]
-Reported By: [Name]
-Date: 2025-11-05
-Test Case ID: [If applicable]
+**Access the Template:**
+- **HTML Template:** [Defect_Reporting.html](Defect_Reporting.html) - Open in your web browser to use
+- Fill in all required fields
+- Save a copy for each defect reported
+- Print or export as PDF for submission
 
-Environment:
-- Browser: [Chrome/Firefox/Edge]
-- Version: [Version number]
-- OS: [Operating System]
+**Template Features:**
+- Professional formatted layout
+- Defect overview with severity and priority indicators
+- Environment details section
+- Step-by-step reproduction instructions
+- Side-by-side comparison of Expected vs Actual results
+- Screenshots and attachments section
+- Additional notes field
+- Print-friendly design
 
-Steps to Reproduce:
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+**Instructions:**
+1. Open [Defect_Reporting.html](Defect_Reporting.html) in your web browser
+2. Fill in the defect details (Title, Severity, Priority, etc.)
+3. Document the environment where the defect was found
+4. Provide clear steps to reproduce the issue
+5. Compare expected vs actual results
+6. Attach screenshots or logs if available
+7. Add any additional relevant information
+8. Save the completed report (you can save the HTML file or print to PDF)
 
-Expected Result:
-[What should happen]
+**Template Preview:**
 
-Actual Result:
-[What actually happened]
+![Defect Reporting Template](Defect_Reporting.png)
 
-Screenshots/Attachments:
-[Attach screenshots, logs, etc.]
-
-Additional Notes:
-[Any other relevant information]
-```
+*Figure: Defect Reporting Template - Preview of the HTML template showing the structure and layout for documenting defects and bugs.*
 
 ### 5.2 Defect Severity Guidelines
 

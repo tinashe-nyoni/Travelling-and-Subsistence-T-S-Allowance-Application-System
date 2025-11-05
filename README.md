@@ -92,7 +92,20 @@ This UAT documentation package includes the following key documents:
    - **Audience:** UAT panelists
    - **Usage:** Open in web browser, fill in details, save/print
 
-### 8. **README.md** - This Document
+### 8. **Defect_Reporting.html** - Defect Reporting Template
+   - **Purpose:** Professional HTML template for documenting defects and bugs
+   - **Contents:**
+     - Formatted defect report
+     - Defect overview with severity and priority
+     - Environment details
+     - Step-by-step reproduction instructions
+     - Results comparison
+     - Screenshots and attachments section
+     - Print-friendly design
+   - **Audience:** UAT panelists, Development team
+   - **Usage:** Open in web browser, fill in details, save/print
+
+### 9. **README.md** - This Document
    - **Purpose:** Overview and navigation guide for all UAT documents
    - **Audience:** All stakeholders
 
@@ -398,6 +411,7 @@ UAT will be considered successful when:
 - [UAT Execution Guide](UAT_EXECUTION_GUIDE.md)
 - [Quick Reference](QUICK_REFERENCE.md)
 - [Test Execution Report Template](Test_Execution_Report_Template.html) - Open in browser to use
+- [Defect Reporting Template](Defect_Reporting.html) - Open in browser to use
 
 ---
 
@@ -412,6 +426,7 @@ UAT will be considered successful when:
 | UAT_EXECUTION_GUIDE.md | 1.0 | ✅ Ready | November 5, 2025 |
 | QUICK_REFERENCE.md | 1.0 | ✅ Ready | November 5, 2025 |
 | Test_Execution_Report_Template.html | 1.0 | ✅ Ready | November 5, 2025 |
+| Defect_Reporting.html | 1.0 | ✅ Ready | November 5, 2025 |
 | README.md | 1.0 | ✅ Ready | November 5, 2025 |
 
 ---
