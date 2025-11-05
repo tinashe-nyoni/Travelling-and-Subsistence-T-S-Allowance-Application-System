@@ -7,7 +7,7 @@
 
 ## 📋 T&S Calculation Quick Reference
 
-### Unapproved T&S Allowance
+### Unapproved T&S Allowance.
 - **Breakfast:** $15/day
 - **Lunch:** $20/day
 - **Dinner:** $25/day
