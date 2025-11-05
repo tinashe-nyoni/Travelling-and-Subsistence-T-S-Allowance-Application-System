@@ -3,7 +3,8 @@
 
 **Project:** Travelling and Subsistence (T&S) Allowance Application System  
 **Document Version:** 1.0  
-**Last Updated:** November 5, 2025
+**Last Updated:** November 5, 2025  
+**Document by:** Tinashe Ephraim Nyoni
 
 ---
 
@@ -81,7 +82,17 @@ This UAT documentation package includes the following key documents:
      - Critical test cases
    - **Audience:** All stakeholders
 
-### 7. **README.md** - This Document
+### 7. **Test_Execution_Report_Template.html** - Test Execution Report Template
+   - **Purpose:** Professional HTML template for documenting test execution
+   - **Contents:**
+     - Formatted test execution report
+     - Step-by-step test tracking
+     - Status badges and results comparison
+     - Print-friendly design
+   - **Audience:** UAT panelists
+   - **Usage:** Open in web browser, fill in details, save/print
+
+### 8. **README.md** - This Document
    - **Purpose:** Overview and navigation guide for all UAT documents
    - **Audience:** All stakeholders
 
@@ -386,6 +397,7 @@ UAT will be considered successful when:
 - [Test Data Guide](TEST_DATA_GUIDE.md)
 - [UAT Execution Guide](UAT_EXECUTION_GUIDE.md)
 - [Quick Reference](QUICK_REFERENCE.md)
+- [Test Execution Report Template](Test_Execution_Report_Template.html) - Open in browser to use
 
 ---
 
@@ -399,6 +411,7 @@ UAT will be considered successful when:
 | TEST_DATA_GUIDE.md | 1.0 | ✅ Ready | November 5, 2025 |
 | UAT_EXECUTION_GUIDE.md | 1.0 | ✅ Ready | November 5, 2025 |
 | QUICK_REFERENCE.md | 1.0 | ✅ Ready | November 5, 2025 |
+| Test_Execution_Report_Template.html | 1.0 | ✅ Ready | November 5, 2025 |
 | README.md | 1.0 | ✅ Ready | November 5, 2025 |
 
 ---

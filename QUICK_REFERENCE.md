@@ -1,6 +1,7 @@
 # Quick Reference Guide
 ## T&S Allowance Application System - UAT
 
+**Document by:** Tinashe Ephraim Nyoni  
 **Quick navigation for common UAT tasks**
 
 ---
@@ -17,7 +18,7 @@
 **Formula:** `Days × $135`
 
 **Example:**
-- Travel: 2024-02-01 to 2024-02-03 (3 days)
+- Travel: 2025-11-15 to 2025-11-17 (3 days)
 - Amount: 3 × $135 = **$405**
 
 ### Approved T&S Allowance
@@ -26,13 +27,13 @@
 **Formula:** `Days × $300`
 
 **Example:**
-- Travel: 2024-02-01 to 2024-02-03 (3 days)
+- Travel: 2025-11-15 to 2025-11-17 (3 days)
 - Amount: 3 × $300 = **$900**
 
 ### Days Calculation
 - Count all days from Departure Date to Arrival Date (inclusive)
 - Same day = 1 day
-- Example: Feb 1 to Feb 3 = 3 days
+- Example: Nov 15 to Nov 17 = 3 days
 
 ---
 

@@ -3,6 +3,7 @@
 
 **Document Version:** 1.0  
 **Date:** November 5, 2025  
+**Document by:** Tinashe Ephraim Nyoni  
 **Total Test Cases:** 70+
 
 ---
@@ -30,10 +31,10 @@
 **Test Steps:**
 1. Navigate to "Submit T&S Application" page
 2. Enter Employee ID: EMP001
-3. Enter Departure Date: 2024-02-01
+3. Enter Departure Date: 2025-11-15
 4. Enter Departure Time: 08:00
 5. Enter Departure City: New York
-6. Enter Arrival Date: 2024-02-03
+6. Enter Arrival Date: 2025-11-17
 7. Enter Arrival Time: 18:00
 8. Enter Arrival City: Los Angeles
 9. Select Type of T&S Allowance: Unapproved
@@ -61,8 +62,8 @@
 1. Navigate to "Submit T&S Application" page
 2. Enter all required fields with valid data
 3. Select Type of T&S Allowance: Approved
-4. Enter Departure Date: 2024-02-01
-5. Enter Arrival Date: 2024-02-02
+4. Enter Departure Date: 2025-11-20
+5. Enter Arrival Date: 2025-11-21
 6. Verify calculated T&S Amount: $600 (2 days × $300)
 7. Click "Submit" button
 
@@ -119,8 +120,8 @@
 
 **Test Steps:**
 1. Navigate to "Submit T&S Application" page
-2. Enter Departure Date: 2024-02-05
-3. Enter Arrival Date: 2024-02-03 (before departure)
+2. Enter Departure Date: 2025-11-25
+3. Enter Arrival Date: 2025-11-23 (before departure)
 4. Click "Submit" button
 
 **Expected Result:**
@@ -137,9 +138,9 @@
 
 **Test Steps:**
 1. Navigate to "Submit T&S Application" page
-2. Enter Departure Date: 2024-02-01
+2. Enter Departure Date: 2025-11-18
 3. Enter Departure Time: 08:00
-4. Enter Arrival Date: 2024-02-01 (same day)
+4. Enter Arrival Date: 2025-11-18 (same day)
 5. Enter Arrival Time: 20:00
 6. Select Type: Unapproved
 7. Verify calculated amount
@@ -159,9 +160,9 @@
 
 **Test Steps:**
 1. Navigate to "Submit T&S Application" page
-2. Enter Departure Date: 2024-02-01
+2. Enter Departure Date: 2025-11-19
 3. Enter Departure Time: 20:00
-4. Enter Arrival Date: 2024-02-01
+4. Enter Arrival Date: 2025-11-19
 5. Enter Arrival Time: 08:00 (before departure time)
 6. Click "Submit"
 
@@ -178,7 +179,7 @@
 **Test Objective:** Verify system prevents duplicate applications.
 
 **Preconditions:**
-- Employee has already submitted an application for 2024-02-01 to 2024-02-03
+- Employee has already submitted an application for 2025-11-15 to 2025-11-17
 
 **Test Steps:**
 1. Navigate to "Submit T&S Application" page
@@ -279,7 +280,7 @@
 
 **Test Steps:**
 1. Navigate to "My Applications" page
-2. Select date range filter: From 2024-01-01 to 2024-01-31
+2. Select date range filter: From 2025-11-01 to 2025-11-30
 3. Click "Apply Filter"
 
 **Expected Result:**
@@ -397,7 +398,7 @@
 
 **Test Steps:**
 1. Navigate to "Pending Applications" page
-2. Select date range: From 2024-01-01 to 2024-01-31
+2. Select date range: From 2025-11-01 to 2025-11-30
 3. Click "Apply Filter"
 
 **Expected Result:**
@@ -574,8 +575,8 @@
 
 **Test Steps:**
 1. Submit application with:
-   - Departure Date: 2024-02-01
-   - Arrival Date: 2024-02-01
+   - Departure Date: 2025-11-18
+   - Arrival Date: 2025-11-18
    - Type: Unapproved
 
 **Expected Result:**
@@ -592,8 +593,8 @@
 
 **Test Steps:**
 1. Submit application with:
-   - Departure Date: 2024-02-01
-   - Arrival Date: 2024-02-05
+   - Departure Date: 2025-11-20
+   - Arrival Date: 2025-11-24
    - Type: Unapproved
 
 **Expected Result:**
@@ -610,8 +611,8 @@
 
 **Test Steps:**
 1. Submit application with:
-   - Departure Date: 2024-02-01
-   - Arrival Date: 2024-02-01
+   - Departure Date: 2025-11-22
+   - Arrival Date: 2025-11-22
    - Type: Approved
 
 **Expected Result:**
@@ -628,8 +629,8 @@
 
 **Test Steps:**
 1. Submit application with:
-   - Departure Date: 2024-02-01
-   - Arrival Date: 2024-02-07
+   - Departure Date: 2025-11-25
+   - Arrival Date: 2025-12-01
    - Type: Approved
 
 **Expected Result:**
@@ -646,8 +647,8 @@
 
 **Test Steps:**
 1. Submit application with:
-   - Departure Date: 2024-02-15
-   - Arrival Date: 2024-02-15
+   - Departure Date: 2025-11-28
+   - Arrival Date: 2025-11-28
    - Type: Unapproved
 
 **Expected Result:**
@@ -664,8 +665,8 @@
 
 **Test Steps:**
 1. Submit application with:
-   - Departure Date: 2024-02-01
-   - Arrival Date: 2024-02-02
+   - Departure Date: 2025-11-19
+   - Arrival Date: 2025-11-20
    - Type: Unapproved
 
 **Expected Result:**
@@ -682,8 +683,8 @@
 
 **Test Steps:**
 1. Submit application with:
-   - Departure Date: 2024-02-01 (Monday)
-   - Arrival Date: 2024-02-07 (Sunday)
+   - Departure Date: 2025-11-24 (Monday)
+   - Arrival Date: 2025-11-30 (Sunday)
    - Type: Approved
 
 **Expected Result:**

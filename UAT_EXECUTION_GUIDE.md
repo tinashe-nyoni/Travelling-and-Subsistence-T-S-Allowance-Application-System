@@ -2,7 +2,8 @@
 ## Travelling and Subsistence (T&S) Allowance Application System
 
 **Document Version:** 1.0  
-**Date:** November 5, 2025
+**Date:** November 5, 2025  
+**Document by:** Tinashe Ephraim Nyoni
 
 ---
 
@@ -110,7 +111,31 @@ Before starting testing, review:
 
 ### 2.4 Test Case Execution Template
 
-Use this template to record test execution:
+Use the HTML template to record test execution. The template provides a professional, structured format for documenting test results.
+
+**Access the Template:**
+- Open the file: `Test_Execution_Report_Template.html` in your web browser
+- Fill in all required fields
+- Save a copy for each test case you execute
+- Print or export as PDF for submission
+
+**Template Features:**
+- Professional formatted layout
+- Step-by-step test execution tracking
+- Status badges (Pass/Fail/Blocked/Not Executed)
+- Side-by-side comparison of Actual vs Expected results
+- Fields for defect tracking and screenshots
+- Print-friendly design
+
+**Instructions:**
+1. Open `Test_Execution_Report_Template.html` in your web browser
+2. Fill in the test case details (ID, Name, Date, etc.)
+3. Document each test step with pass/fail status
+4. Record actual results and compare with expected results
+5. Mark overall status and attach any defect IDs or screenshots
+6. Save the completed report (you can save the HTML file or print to PDF)
+
+**Alternative Text Template (if HTML is not available):**
 
 ```
 Test Case ID: [e.g., TC-EMP-001]

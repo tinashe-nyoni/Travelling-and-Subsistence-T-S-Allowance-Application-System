@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Execution Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 40, 100, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
+            color: white;
+            padding: 20px 30px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            margin-bottom: 3px;
+        }
+
+        .header p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 25px 30px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #001f3f;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #001f3f;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .field-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .field {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .field-label {
+            font-weight: 600;
+            color: #001f3f;
+            font-size: 12px;
+            min-width: 120px;
+            flex-shrink: 0;
+        }
+
+        .field-value {
+            background: #f8f9fb;
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: 1px solid #e1e8ed;
+            font-size: 12px;
+            color: #2c3e50;
+            flex: 1;
+        }
+
+        .inline-field {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-right: 20px;
+            margin-bottom: 8px;
+        }
+
+        .inline-field .field-label {
+            min-width: auto;
+        }
+
+        .inline-field .field-value {
+            min-width: 100px;
+        }
+
+        .test-steps {
+            background: #f8f9fb;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+
+        .step-item {
+            background: white;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            border-left: 3px solid #001f3f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-header {
+            font-weight: 600;
+            color: #001f3f;
+            margin-bottom: 3px;
+            font-size: 12px;
+        }
+
+        .step-details {
+            color: #5a6c7d;
+            font-size: 11px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 10px;
+        }
+
+        .status-pass {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .status-blocked {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-not-executed {
+            background: #e2e3e5;
+            color: #383d41;
+        }
+
+        .results-box {
+            background: #f8f9fb;
+            padding: 10px 12px;
+            border-radius: 4px;
+            border: 1px solid #e1e8ed;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .compact-section {
+            margin-bottom: 15px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .section {
+                margin-bottom: 15px;
+            }
+
+            .content {
+                padding: 15px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .field {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .field-label {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Test Execution Report</h1>
+            <p>Comprehensive Test Case Documentation</p>
+        </div>
+
+        <div class="content">
+            <!-- Test Identification & Execution Details Combined -->
+            <div class="section compact-section">
+                <div class="section-title">Test Overview</div>
+                <div class="field-group">
+                    <div class="field">
+                        <div class="field-label">Test Case ID:</div>
+                        <div class="field-value">[e.g., TC-EMP-001]</div>
+                    </div>
+                    <div class="field">
+                        <div class="field-label">Executed By:</div>
+                        <div class="field-value">[Your Name]</div>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="field">
+                        <div class="field-label">Test Case Name:</div>
+                        <div class="field-value">[Name from TEST_CASES.md]</div>
+                    </div>
+                    <div class="field">
+                        <div class="field-label">Date:</div>
+                        <div class="field-value">November 5, 2025</div>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <div class="inline-field">
+                        <div class="field-label">Time Started:</div>
+                        <div class="field-value">[HH:MM]</div>
+                    </div>
+                    <div class="inline-field">
+                        <div class="field-label">Time Completed:</div>
+                        <div class="field-value">[HH:MM]</div>
+                    </div>
+                    <div class="inline-field">
+                        <div class="field-label">Preconditions Met:</div>
+                        <div class="field-value">[Yes/No]</div>
+                    </div>
+                </div>
+                <div class="field" style="margin-top: 8px;">
+                    <div class="field-label">If No, specify:</div>
+                    <div class="field-value">[Details]</div>
+                </div>
+            </div>
+
+            <!-- Test Steps -->
+            <div class="section compact-section">
+                <div class="section-title">Test Steps Executed</div>
+                <div class="test-steps">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <div class="step-header">Step 1</div>
+                            <div class="step-details">[Notes]</div>
+                        </div>
+                        <span class="status-badge status-pass">Pass</span>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <div class="step-header">Step 2</div>
+                            <div class="step-details">[Notes]</div>
+                        </div>
+                        <span class="status-badge status-pass">Pass</span>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <div class="step-header">Step 3</div>
+                            <div class="step-details">[Notes]</div>
+                        </div>
+                        <span class="status-badge status-fail">Fail</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results in Two Columns -->
+            <div class="section compact-section">
+                <div class="section-title">Results</div>
+                <div class="two-column">
+                    <div>
+                        <div style="font-weight: 600; color: #001f3f; font-size: 12px; margin-bottom: 5px;">Actual Results:</div>
+                        <div class="results-box">[Describe what actually happened]</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: 600; color: #001f3f; font-size: 12px; margin-bottom: 5px;">Expected Results:</div>
+                        <div class="results-box">[From test case document]</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status and Additional Info Combined -->
+            <div class="section compact-section">
+                <div class="section-title">Status & Notes</div>
+                <div style="margin-bottom: 12px;">
+                    <div class="inline-field">
+                        <div class="field-label">Status:</div>
+                        <span class="status-badge status-pass">Pass</span>
+                    </div>
+                    <div class="inline-field">
+                        <div class="field-label">Defect ID:</div>
+                        <div class="field-value">[Defect ID]</div>
+                    </div>
+                    <div class="inline-field">
+                        <div class="field-label">Screenshots:</div>
+                        <div class="field-value">[Attachment if needed]</div>
+                    </div>
+                </div>
+                <div style="font-weight: 600; color: #001f3f; font-size: 12px; margin-bottom: 5px;">Additional Notes:</div>
+                <div class="results-box">[Any additional observations]</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

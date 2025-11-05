@@ -4,6 +4,7 @@
 **Document Version:** 1.0  
 **Date:** November 5, 2025  
 **Prepared By:** UAT Team  
+**Document by:** Tinashe Ephraim Nyoni  
 **Status:** Draft
 
 ---
@@ -382,7 +383,7 @@ Total Approved Amount = Number of Days × $300
 
 #### Number of Days Calculation
 - Count all days from Departure Date to Arrival Date (inclusive)
-- Example: Departure Date = 2024-01-01, Arrival Date = 2024-01-03
+- Example: Departure Date = 2025-11-15, Arrival Date = 2025-11-17
   - Number of Days = 3
 
 ### Appendix B: Test Environment Access
@@ -400,7 +401,7 @@ Total Approved Amount = Number of Days × $300
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | November 5, 2025 | UAT Team | Initial version |
+| 1.0 | November 5, 2025 | Tinashe Ephraim Nyoni | Initial version |
 
 ---
 

@@ -2,7 +2,8 @@
 ## Travelling and Subsistence (T&S) Allowance Application System
 
 **Document Version:** 1.0  
-**Date:** November 5, 2025
+**Date:** November 5, 2025  
+**Document by:** Tinashe Ephraim Nyoni
 
 ---
 
@@ -83,26 +84,26 @@ The following test data should be pre-populated in the test environment:
 
 | Application ID | Employee ID | Departure Date | Arrival Date | Type | Amount | Status |
 |----------------|-------------|----------------|--------------|------|--------|--------|
-| APP001 | EMP001 | 2024-01-15 | 2024-01-17 | Unapproved | $405 | Pending |
-| APP002 | EMP002 | 2024-01-20 | 2024-01-20 | Approved | $300 | Pending |
-| APP003 | EMP003 | 2024-01-25 | 2024-01-28 | Unapproved | $540 | Pending |
-| APP004 | EMP001 | 2024-02-01 | 2024-02-01 | Approved | $300 | Pending |
-| APP005 | EMP002 | 2024-02-05 | 2024-02-07 | Unapproved | $405 | Pending |
+| APP001 | EMP001 | 2025-11-15 | 2025-11-17 | Unapproved | $405 | Pending |
+| APP002 | EMP002 | 2025-11-20 | 2025-11-20 | Approved | $300 | Pending |
+| APP003 | EMP003 | 2025-11-25 | 2025-11-28 | Unapproved | $540 | Pending |
+| APP004 | EMP001 | 2025-12-01 | 2025-12-01 | Approved | $300 | Pending |
+| APP005 | EMP002 | 2025-12-05 | 2025-12-07 | Unapproved | $405 | Pending |
 
 #### 3.1.2 Approved Applications
 
 | Application ID | Employee ID | Departure Date | Arrival Date | Type | Amount | Status | Approved By | Approved Date |
 |----------------|-------------|----------------|--------------|------|--------|--------|-------------|---------------|
-| APP006 | EMP001 | 2023-12-01 | 2023-12-03 | Unapproved | $405 | Approved | SUP001 | 2023-12-01 |
-| APP007 | EMP002 | 2023-12-10 | 2023-12-10 | Approved | $300 | Approved | SUP001 | 2023-12-10 |
-| APP008 | EMP003 | 2023-12-15 | 2023-12-18 | Unapproved | $540 | Approved | SUP002 | 2023-12-15 |
+| APP006 | EMP001 | 2025-10-01 | 2025-10-03 | Unapproved | $405 | Approved | SUP001 | 2025-10-01 |
+| APP007 | EMP002 | 2025-10-10 | 2025-10-10 | Approved | $300 | Approved | SUP001 | 2025-10-10 |
+| APP008 | EMP003 | 2025-10-15 | 2025-10-18 | Unapproved | $540 | Approved | SUP002 | 2025-10-15 |
 
 #### 3.1.3 Rejected Applications
 
 | Application ID | Employee ID | Departure Date | Arrival Date | Type | Amount | Status | Rejected By | Rejected Date | Comments |
 |----------------|-------------|----------------|--------------|------|--------|--------|-------------|---------------|----------|
-| APP009 | EMP001 | 2023-11-01 | 2023-11-05 | Approved | $1500 | Rejected | SUP001 | 2023-11-01 | Travel dates not approved |
-| APP010 | EMP002 | 2023-11-10 | 2023-11-12 | Unapproved | $405 | Rejected | SUP001 | 2023-11-10 | Insufficient justification |
+| APP009 | EMP001 | 2025-10-05 | 2025-10-09 | Approved | $1500 | Rejected | SUP001 | 2025-10-05 | Travel dates not approved |
+| APP010 | EMP002 | 2025-10-12 | 2025-10-14 | Unapproved | $405 | Rejected | SUP001 | 2025-10-12 | Insufficient justification |
 
 ---
 
@@ -111,9 +112,9 @@ The following test data should be pre-populated in the test environment:
 ### 4.1 Test Scenarios for Manual Testing
 
 #### Scenario 1: Single Day Travel - Unapproved
-- **Departure Date:** 2024-03-01
+- **Departure Date:** 2025-11-18
 - **Departure Time:** 08:00
-- **Arrival Date:** 2024-03-01
+- **Arrival Date:** 2025-11-18
 - **Arrival Time:** 20:00
 - **Departure City:** New York
 - **Arrival City:** Boston
@@ -121,9 +122,9 @@ The following test data should be pre-populated in the test environment:
 - **Expected Amount:** $135 (1 day × $135)
 
 #### Scenario 2: Single Day Travel - Approved
-- **Departure Date:** 2024-03-02
+- **Departure Date:** 2025-11-19
 - **Departure Time:** 06:00
-- **Arrival Date:** 2024-03-02
+- **Arrival Date:** 2025-11-19
 - **Arrival Time:** 22:00
 - **Departure City:** Los Angeles
 - **Arrival City:** San Francisco
@@ -131,9 +132,9 @@ The following test data should be pre-populated in the test environment:
 - **Expected Amount:** $300 (1 day × $300)
 
 #### Scenario 3: Multi-Day Travel - Unapproved
-- **Departure Date:** 2024-03-05
+- **Departure Date:** 2025-11-22
 - **Departure Time:** 09:00
-- **Arrival Date:** 2024-03-08
+- **Arrival Date:** 2025-11-25
 - **Arrival Time:** 17:00
 - **Departure City:** Chicago
 - **Arrival City:** Miami
@@ -141,9 +142,9 @@ The following test data should be pre-populated in the test environment:
 - **Expected Amount:** $540 (4 days × $135)
 
 #### Scenario 4: Multi-Day Travel - Approved
-- **Departure Date:** 2024-03-10
+- **Departure Date:** 2025-11-27
 - **Departure Time:** 07:00
-- **Arrival Date:** 2024-03-15
+- **Arrival Date:** 2025-12-02
 - **Arrival Time:** 19:00
 - **Departure City:** Seattle
 - **Arrival City:** New York
@@ -151,9 +152,9 @@ The following test data should be pre-populated in the test environment:
 - **Expected Amount:** $1,800 (6 days × $300)
 
 #### Scenario 5: Weekend Travel
-- **Departure Date:** 2024-03-15 (Friday)
+- **Departure Date:** 2025-11-28 (Friday)
 - **Departure Time:** 18:00
-- **Arrival Date:** 2024-03-17 (Sunday)
+- **Arrival Date:** 2025-11-30 (Sunday)
 - **Arrival Time:** 12:00
 - **Departure City:** Dallas
 - **Arrival City:** Houston
