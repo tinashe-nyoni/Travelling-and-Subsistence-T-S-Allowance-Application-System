@@ -48,7 +48,7 @@ This document provides a comprehensive matrix of all acceptance criteria mapped 
 
 ### Supervisor Functions
 
-#### Review T&S Allowance Applications
+#### Review T&S Allowance Applications.
 
 | AC ID | Acceptance Criteria | Functional Requirement | Test Case ID | Priority | Status | Notes |
 |-------|-------------------|----------------------|--------------|----------|--------|-------|
