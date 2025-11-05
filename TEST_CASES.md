@@ -2,7 +2,7 @@
 ## Travelling and Subsistence (T&S) Allowance Application System
 
 **Document Version:** 1.0  
-**Date:** [Current Date]  
+**Date:** November 5, 2025  
 **Total Test Cases:** 70+
 
 ---
@@ -808,7 +808,7 @@
 
 | Test Case ID | Test Case Name | Priority | Executed By | Date | Status | Defect ID | Notes |
 |--------------|----------------|----------|-------------|------|--------|-----------|-------|
-| TC-EMP-001 | Submit T&S Application - Valid Unapproved | High | [Name] | [Date] | Pass/Fail/Blocked | [ID] | [Notes] |
+| TC-EMP-001 | Submit T&S Application - Valid Unapproved | High | [Name] | November 5, 2025 | Pass/Fail/Blocked | [ID] | [Notes] |
 
 **Status Values:**
 - **Pass:** Test case passed

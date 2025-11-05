@@ -2,7 +2,7 @@
 ## Travelling and Subsistence (T&S) Allowance Application System
 
 **Document Version:** 1.0  
-**Date:** [Current Date]
+**Date:** November 5, 2025
 
 ---
 
@@ -115,7 +115,7 @@ Use this template to record test execution:
 ```
 Test Case ID: [e.g., TC-EMP-001]
 Test Case Name: [Name from TEST_CASES.md]
-Date: [YYYY-MM-DD]
+Date: November 5, 2025
 Executed By: [Your Name]
 Time Started: [HH:MM]
 Time Completed: [HH:MM]
@@ -280,7 +280,7 @@ Title: [Brief description]
 Severity: [Critical/High/Medium/Low]
 Priority: [P1/P2/P3/P4]
 Reported By: [Name]
-Date: [YYYY-MM-DD]
+Date: 2025-11-05
 Test Case ID: [If applicable]
 
 Environment:
@@ -344,7 +344,7 @@ Additional Notes:
 **Template:**
 
 ```
-UAT Daily Report - [Date]
+UAT Daily Report - November 5, 2025
 
 Test Execution Summary:
 - Test Cases Executed: [Number]

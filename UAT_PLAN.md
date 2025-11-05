@@ -2,7 +2,7 @@
 ## Travelling and Subsistence (T&S) Allowance Application System
 
 **Document Version:** 1.0  
-**Date:** [Current Date]  
+**Date:** November 5, 2025  
 **Prepared By:** UAT Team  
 **Status:** Draft
 
@@ -400,7 +400,7 @@ Total Approved Amount = Number of Days × $300
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | UAT Team | Initial version |
+| 1.0 | November 5, 2025 | UAT Team | Initial version |
 
 ---
 
