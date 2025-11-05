@@ -435,24 +435,11 @@ UAT will be considered successful when:
 
 ---
 
-### If Using GitHub/GitLab:
+### Using GitHub/GitLab:
 1. Clone the repository: `git clone https://github.com/tinashe-nyoni/Travelling-and-Subsistence-T-S-Allowance-Application-System`
 2. Navigate to UAT documentation folder
 3. Access documents via web interface or locally
 
-### If Using SharePoint/Confluence:
-1. Navigate to project workspace
-2. Access "UAT Documentation" folder
-3. Open documents as needed
-
-### If Using Google Drive/OneDrive:
-1. Access shared folder
-2. Open documents directly or download
-3. Use version history if needed
-
-### If Using Other Platforms:
-- Follow platform-specific instructions
-- Contact UAT Coordinator for access issues
 
 ---
 
