@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAT Daily Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 40, 100, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .header-left p {
+            font-size: 13px;
+            opacity: 0.95;
+        }
+
+        .date-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #001f3f;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #001f3f;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #001f3f;
+            border-radius: 2px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: #f8f9fb;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #001f3f;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #5a6c7d;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #001f3f;
+            line-height: 1;
+        }
+
+        .stat-card.passed {
+            border-left-color: #28a745;
+            background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e9 100%);
+        }
+
+        .stat-card.passed .stat-value {
+            color: #28a745;
+        }
+
+        .stat-card.failed {
+            border-left-color: #dc3545;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeaea 100%);
+        }
+
+        .stat-card.failed .stat-value {
+            color: #dc3545;
+        }
+
+        .stat-card.blocked {
+            border-left-color: #ffc107;
+            background: linear-gradient(135deg, #fffbf0 0%, #fff8e1 100%);
+        }
+
+        .stat-card.blocked .stat-value {
+            color: #d39e00;
+        }
+
+        .stat-card.executed {
+            border-left-color: #007bff;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+        }
+
+        .stat-card.executed .stat-value {
+            color: #007bff;
+        }
+
+        .stat-subtext {
+            font-size: 11px;
+            color: #6c757d;
+            margin-top: 4px;
+        }
+
+        .progress-container {
+            background: #f8f9fb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .progress-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #001f3f;
+        }
+
+        .progress-percentage {
+            font-size: 18px;
+            font-weight: 700;
+            color: #001f3f;
+        }
+
+        .progress-bar-bg {
+            background: #e1e8ed;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #001f3f 0%, #003d7a 100%);
+            height: 100%;
+            width: 75%;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            transition: width 0.5s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .metric-item {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e1e8ed;
+            text-align: center;
+        }
+
+        .metric-label {
+            font-size: 10px;
+            color: #6c757d;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #001f3f;
+        }
+
+        .defect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .defect-card {
+            background: #f8f9fb;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .defect-card:hover {
+            border-color: #001f3f;
+            transform: translateY(-2px);
+        }
+
+        .defect-label {
+            font-size: 11px;
+            color: #5a6c7d;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .defect-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #001f3f;
+        }
+
+        .defect-card.new {
+            border-color: #dc3545;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeaea 100%);
+        }
+
+        .defect-card.new .defect-value {
+            color: #dc3545;
+        }
+
+        .defect-card.resolved {
+            border-color: #28a745;
+            background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e9 100%);
+        }
+
+        .defect-card.resolved .defect-value {
+            color: #28a745;
+        }
+
+        .defect-card.open {
+            border-color: #ffc107;
+            background: linear-gradient(135deg, #fffbf0 0%, #fff8e1 100%);
+        }
+
+        .defect-card.open .defect-value {
+            color: #856404;
+        }
+
+        .priority-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .priority-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e1e8ed;
+            transition: all 0.2s;
+        }
+
+        .priority-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .priority-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .priority-value {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .p1 {
+            color: #721c24;
+            border-color: #721c24;
+        }
+
+        .p2 {
+            color: #856404;
+            border-color: #856404;
+        }
+
+        .p3 {
+            color: #0c5460;
+            border-color: #0c5460;
+        }
+
+        .p4 {
+            color: #155724;
+            border-color: #155724;
+        }
+
+        .list-container {
+            background: #f8f9fb;
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 10px;
+            min-height: 100px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .list-item {
+            padding: 12px 15px;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border-left: 4px solid #001f3f;
+            font-size: 12px;
+            color: #2c3e50;
+            line-height: 1.6;
+            transition: all 0.2s;
+        }
+
+        .list-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .blocker-item {
+            border-left-color: #dc3545;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeaea 100%);
+        }
+
+        .plan-item {
+            border-left-color: #28a745;
+            background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e9 100%);
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+            padding: 30px;
+            font-size: 13px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .test-case-breakdown {
+            background: #f8f9fb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border-left: 4px solid #001f3f;
+        }
+
+        .breakdown-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .breakdown-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .breakdown-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #001f3f;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section {
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card:hover,
+            .defect-card:hover,
+            .priority-item:hover,
+            .list-item:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .defect-grid,
+            .priority-grid,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .date-badge {
+                width: 100%;
+                text-align: center;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .priority-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>UAT Daily Test Report</h1>
+                <p>User Acceptance Testing Progress Summary</p>
+            </div>
+            <div class="date-badge">November 5, 2025</div>
+        </div>
+
+        <div class="content">
+            <!-- Test Execution Summary -->
+            <div class="section">
+                <div class="section-title">Test Execution Summary</div>
+                <div class="stats-grid">
+                    <div class="stat-card executed">
+                        <div class="stat-label">Test Cases Executed</div>
+                        <div class="stat-value">[Number]</div>
+                        <div class="stat-subtext">Today's execution count</div>
+                    </div>
+                    <div class="stat-card passed">
+                        <div class="stat-label">Passed</div>
+                        <div class="stat-value">[Number]</div>
+                        <div class="stat-subtext">Successful test cases</div>
+                    </div>
+                    <div class="stat-card failed">
+                        <div class="stat-label">Failed</div>
+                        <div class="stat-value">[Number]</div>
+                        <div class="stat-subtext">Failed test cases</div>
+                    </div>
+                    <div class="stat-card blocked">
+                        <div class="stat-label">Blocked</div>
+                        <div class="stat-value">[Number]</div>
+                        <div class="stat-subtext">Blocked by defects</div>
+                    </div>
+                </div>
+
+                <div class="metrics-row">
+                    <div class="metric-item">
+                        <div class="metric-label">Pass Rate</div>
+                        <div class="metric-value" style="color: #28a745;">[%]</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Fail Rate</div>
+                        <div class="metric-value" style="color: #dc3545;">[%]</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Total Tests</div>
+                        <div class="metric-value">[Number]</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Not Executed</div>
+                        <div class="metric-value" style="color: #6c757d;">[Number]</div>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span class="progress-label">Overall Test Execution Progress</span>
+                        <span class="progress-percentage">[Percentage]%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 75%;">
+                            75% Complete
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Defect Summary -->
+            <div class="section">
+                <div class="section-title">Defect Summary</div>
+                <div class="defect-grid">
+                    <div class="defect-card new">
+                        <div class="defect-label">New Defects</div>
+                        <div class="defect-value">[Number]</div>
+                    </div>
+                    <div class="defect-card resolved">
+                        <div class="defect-label">Resolved</div>
+                        <div class="defect-value">[Number]</div>
+                    </div>
+                    <div class="defect-card open">
+                        <div class="defect-label">Open Defects</div>
+                        <div class="defect-value">[Number]</div>
+                    </div>
+                </div>
+
+                <div style="font-weight: 700; color: #001f3f; font-size: 13px; margin-bottom: 12px; margin-top: 10px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Open Defects by Priority
+                </div>
+                <div class="priority-grid">
+                    <div class="priority-item p1">
+                        <div class="priority-label p1">P1 Critical</div>
+                        <div class="priority-value p1">[Number]</div>
+                    </div>
+                    <div class="priority-item p2">
+                        <div class="priority-label p2">P2 High</div>
+                        <div class="priority-value p2">[Number]</div>
+                    </div>
+                    <div class="priority-item p3">
+                        <div class="priority-label p3">P3 Medium</div>
+                        <div class="priority-value p3">[Number]</div>
+                    </div>
+                    <div class="priority-item p4">
+                        <div class="priority-label p4">P4 Low</div>
+                        <div class="priority-value p4">[Number]</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Case Breakdown -->
+            <div class="section">
+                <div class="section-title">Test Case Breakdown by Priority</div>
+                <div class="test-case-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">High Priority Test Cases</div>
+                        <div class="breakdown-value">[Number] / [Total]</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Medium Priority Test Cases</div>
+                        <div class="breakdown-value">[Number] / [Total]</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Low Priority Test Cases</div>
+                        <div class="breakdown-value">[Number] / [Total]</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blockers and Next Day Plan -->
+            <div class="two-column">
+                <div class="section">
+                    <div class="section-title">Blockers</div>
+                    <div class="list-container">
+                        <div class="list-item blocker-item">
+                            [List any blockers affecting testing progress]
+                        </div>
+                        <div class="list-item blocker-item">
+                            [Additional blocker if applicable]
+                        </div>
+                        <div class="empty-state" style="display: none;">
+                            No blockers reported
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Next Day Plan</div>
+                    <div class="list-container">
+                        <div class="list-item plan-item">
+                            [Planned test activities for next day]
+                        </div>
+                        <div class="list-item plan-item">
+                            [Additional planned activities]
+                        </div>
+                        <div class="empty-state" style="display: none;">
+                            No plans documented
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

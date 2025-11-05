@@ -341,7 +341,45 @@ Use the HTML template to report defects. The template provides a structured form
 
 ### 6.1 Daily Test Execution Report
 
-**Template:**
+Use the HTML template to create daily UAT reports. The template provides a comprehensive, professional format for documenting daily testing progress.
+
+**Access the Template:**
+- **HTML Template:** [UAT_Daily_Report_Template.html](UAT_Daily_Report_Template.html) - Open in your web browser to use
+- Fill in all required fields with daily statistics
+- Save a copy for each day's report
+- Print or export as PDF for submission
+
+**Template Features:**
+- Professional formatted layout with visual statistics
+- Test execution summary with pass/fail/blocked counts
+- Pass rate and fail rate calculations
+- Progress bar visualization
+- Defect summary with new/resolved/open counts
+- Defect breakdown by priority (P1-P4)
+- Test case breakdown by priority
+- Blockers section
+- Next day planning section
+- Print-friendly design
+
+**Instructions:**
+1. Open [UAT_Daily_Report_Template.html](UAT_Daily_Report_Template.html) in your web browser
+2. Update the date in the header badge
+3. Fill in test execution statistics (Executed, Passed, Failed, Blocked)
+4. Enter pass rate and fail rate percentages
+5. Update overall progress percentage
+6. Document defect summary (New, Resolved, Open by priority)
+7. Add test case breakdown by priority
+8. List any blockers affecting testing
+9. Document planned activities for the next day
+10. Save the completed report (you can save the HTML file or print to PDF)
+
+**Template Preview:**
+
+![UAT Daily Report Template](UAT-Daily-Report-Template.png)
+
+*Figure: UAT Daily Report Template - Preview of the HTML template showing the structure and layout for documenting daily UAT progress and statistics.*
+
+**Alternative Text Template (if HTML is not available):**
 
 ```
 UAT Daily Report - November 5, 2025
