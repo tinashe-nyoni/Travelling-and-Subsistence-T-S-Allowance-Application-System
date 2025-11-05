@@ -114,7 +114,7 @@ Before starting testing, review:
 Use the HTML template to record test execution. The template provides a professional, structured format for documenting test results.
 
 **Access the Template:**
-- Open the file: `Test_Execution_Report_Template.html` in your web browser
+- **HTML Template:** [Test_Execution_Report_Template.html](Test_Execution_Report_Template.html) - Open in your web browser to use
 - Fill in all required fields
 - Save a copy for each test case you execute
 - Print or export as PDF for submission
@@ -128,43 +128,18 @@ Use the HTML template to record test execution. The template provides a professi
 - Print-friendly design
 
 **Instructions:**
-1. Open `Test_Execution_Report_Template.html` in your web browser
+1. Open [Test_Execution_Report_Template.html](Test_Execution_Report_Template.html) in your web browser
 2. Fill in the test case details (ID, Name, Date, etc.)
 3. Document each test step with pass/fail status
 4. Record actual results and compare with expected results
 5. Mark overall status and attach any defect IDs or screenshots
 6. Save the completed report (you can save the HTML file or print to PDF)
 
-**Alternative Text Template (if HTML is not available):**
+**Template Preview:**
 
-```
-Test Case ID: [e.g., TC-EMP-001]
-Test Case Name: [Name from TEST_CASES.md]
-Date: November 5, 2025
-Executed By: [Your Name]
-Time Started: [HH:MM]
-Time Completed: [HH:MM]
+![Test Execution Report Template](testcase.png)
 
-Preconditions Met: [Yes/No]
-If No, specify: [Details]
-
-Test Steps Executed:
-Step 1: [Pass/Fail] - [Notes]
-Step 2: [Pass/Fail] - [Notes]
-...
-
-Actual Results:
-[Describe what actually happened]
-
-Expected Results:
-[From test case document]
-
-Status: [Pass/Fail/Blocked/Not Executed]
-
-Defect ID (if failed): [Defect ID]
-Screenshots: [Attachment if needed]
-Notes: [Any additional observations]
-```
+*Figure: Test Execution Report Template - Preview of the HTML template showing the structure and layout for documenting test execution results.*
 
 ---
 
