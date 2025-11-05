@@ -435,10 +435,8 @@ UAT will be considered successful when:
 
 ---
 
-## 🌐 Accessing on Project Collaboration Platform
-
 ### If Using GitHub/GitLab:
-1. Clone the repository: `git clone [repository-url]`
+1. Clone the repository: `git clone https://github.com/tinashe-nyoni/Travelling-and-Subsistence-T-S-Allowance-Application-System`
 2. Navigate to UAT documentation folder
 3. Access documents via web interface or locally
 
